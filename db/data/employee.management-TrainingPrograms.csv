@@ -1,0 +1,6 @@
+ID,code,title,description,category,duration,cost,currency_code,provider,isActive
+1,JS101,JavaScript Fundamentals,Introduction to JavaScript programming,Technical,40,500,USD,TechCorp Academy,true
+2,REACT201,Advanced React Development,Advanced React patterns and best practices,Technical,32,800,USD,TechCorp Academy,true
+3,MGMT101,Leadership Essentials,Basic leadership and management skills,Soft Skills,24,600,USD,Leadership Institute,true
+4,SAFE301,Safety Training,Workplace safety and compliance,Compliance,8,200,USD,Safety Solutions Inc,true
+5,COMM201,Effective Communication,Communication skills for professionals,Soft Skills,16,400,USD,Skills Academy,true

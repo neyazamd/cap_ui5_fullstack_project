@@ -1,0 +1,6 @@
+ID,positionCode,title,description,salaryGrade_ID,level,category,skills,experience,isManagerial
+1,MGR,Manager,Manages team and operations,4,3,Management,Leadership team management project planning,5+ years management experience,true
+2,DEV,Developer,Software development and programming,2,2,Technical,JavaScript React Node.js SQL,2+ years development experience,false
+3,AN,Analyst,Business and data analysis,2,2,Technical,Excel SQL Python data analysis,3+ years analysis experience,false
+4,COORD,Coordinator,Project coordination and support,1,1,Administrative,Organization communication project management,1+ years coordination experience,false
+5,SPEC,Specialist,Subject matter expertise,2,2,Technical,Domain expertise consulting problem solving,3+ years specialized experience,false

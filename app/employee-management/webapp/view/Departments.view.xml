@@ -1,0 +1,13 @@
+<mvc:View controllerName="com.company.employeemanagement.controller.Departments"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    
+    <Page id="departmentPage" title="{i18n>departmentListTitle}" showNavButton="true" navButtonPress="onNavBack">
+        <content>
+            <VBox class="sapUiMediumMargin">
+                <Text text="Department Management - Coming Soon" class="sapUiLargeMarginBottom"/>
+                <Text text="This section will contain department list and management features."/>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

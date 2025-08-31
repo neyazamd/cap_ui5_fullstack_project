@@ -1,0 +1,13 @@
+<mvc:View controllerName="com.company.employeemanagement.controller.LeaveRequests"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    
+    <Page id="leaveRequestPage" title="{i18n>leaveRequestListTitle}" showNavButton="true" navButtonPress="onNavBack">
+        <content>
+            <VBox class="sapUiMediumMargin">
+                <Text text="Leave Management - Coming Soon" class="sapUiLargeMarginBottom"/>
+                <Text text="This section will contain leave request management features."/>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

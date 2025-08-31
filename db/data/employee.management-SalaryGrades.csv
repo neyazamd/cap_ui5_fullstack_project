@@ -1,0 +1,9 @@
+ID,grade,title,minSalary,maxSalary,currency_code,description
+1,T1,Technical Level 1,50000,70000,USD,Entry level technical position
+2,T2,Technical Level 2,70000,90000,USD,Mid-level technical position
+3,T3,Technical Level 3,90000,120000,USD,Senior technical position
+4,M1,Management Level 1,80000,110000,USD,First level management
+5,M2,Management Level 2,110000,150000,USD,Mid-level management
+6,M3,Management Level 3,150000,200000,USD,Senior management
+7,S1,Support Level 1,40000,60000,USD,Support and administrative roles
+8,S2,Support Level 2,60000,80000,USD,Senior support roles

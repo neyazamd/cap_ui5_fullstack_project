@@ -1,0 +1,97 @@
+<mvc:View controllerName="com.company.employeemanagement.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:core="sap.ui.core">
+    
+    <Page id="page" title="{i18n>title}" showNavButton="false">
+        <content>
+            <VBox class="sapUiMediumMargin">
+                <HBox class="sapUiMediumMargin" justifyContent="SpaceBetween">
+                    <Title text="Employee Management System" level="H1"/>
+                </HBox>
+                
+                <!-- Tiles in a responsive grid -->
+                <HBox class="sapUiMediumMargin" wrap="Wrap">
+                    <!-- Employee Management Tile -->
+                    <GenericTile class="sapUiTinyMargin" header="Employee Management" 
+                                 subheader="Manage employee records" 
+                                 press="onNavigateToEmployees">
+                        <tileContent>
+                            <TileContent>
+                                <content>
+                                    <NumericContent value="156" indicator="Up" 
+                                                  valueColor="Good" withMargin="false"/>
+                                </content>
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+                    
+                    <!-- Department Management Tile -->
+                    <GenericTile class="sapUiTinyMargin" header="Department Management" 
+                                 subheader="Manage departments" 
+                                 press="onNavigateToDepartments">
+                        <tileContent>
+                            <TileContent>
+                                <content>
+                                    <NumericContent value="12" indicator="None" 
+                                                  valueColor="Neutral" withMargin="false"/>
+                                </content>
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+                    
+                    <!-- Leave Management Tile -->
+                    <GenericTile class="sapUiTinyMargin" header="Leave Management" 
+                                 subheader="Manage leave requests" 
+                                 press="onNavigateToLeaveRequests">
+                        <tileContent>
+                            <TileContent>
+                                <content>
+                                    <NumericContent value="23" indicator="Down" 
+                                                  valueColor="Critical" withMargin="false"/>
+                                </content>
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+                    
+                    <!-- Performance Management Tile -->
+                    <GenericTile class="sapUiTinyMargin" header="Performance Management" 
+                                 subheader="Track performance reviews" 
+                                 press="onNavigateToPerformance">
+                        <tileContent>
+                            <TileContent>
+                                <content>
+                                    <NumericContent value="89%" indicator="Up" 
+                                                  valueColor="Good" withMargin="false"/>
+                                </content>
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+                </HBox>
+                
+                <!-- Quick Statistics Panel -->
+                <Panel headerText="Quick Statistics" class="sapUiResponsiveMargin" width="auto">
+                    <content>
+                        <HBox>
+                            <VBox class="sapUiMediumMargin">
+                                <ObjectNumber number="156" unit="Total Employees" 
+                                            state="Success" emphasized="true"/>
+                            </VBox>
+                            <VBox class="sapUiMediumMargin">
+                                <ObjectNumber number="23" unit="Pending Leave Requests" 
+                                            state="Warning" emphasized="true"/>
+                            </VBox>
+                            <VBox class="sapUiMediumMargin">
+                                <ObjectNumber number="12" unit="Active Departments" 
+                                            state="Information" emphasized="true"/>
+                            </VBox>
+                            <VBox class="sapUiMediumMargin">
+                                <ObjectNumber number="7" unit="Training Programs" 
+                                            state="Success" emphasized="true"/>
+                            </VBox>
+                        </HBox>
+                    </content>
+                </Panel>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

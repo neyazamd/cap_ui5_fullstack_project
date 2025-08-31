@@ -1,0 +1,45 @@
+{
+  "name": "employee-management-hr-system",
+  "version": "1.0.0",
+  "description": "Employee Management & HR System built with SAP CAP and UI5",
+  "main": "server.js",
+  "scripts": {
+    "start": "cds run",
+    "watch": "cds watch",
+    "build": "cds build",
+    "deploy": "cds deploy",
+    "test": "jest"
+  },
+  "keywords": [
+    "SAP",
+    "CAP",
+    "UI5",
+    "Employee Management",
+    "HR System"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cap-js/sqlite": "^2.0.2",
+    "@sap/cds": "^9.2.1",
+    "@sap/cds-dk": "^9.2.0",
+    "express": "^4.21.2",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "credentials": {
+          "url": "db.sqlite"
+        }
+      }
+    },
+    "features": {
+      "fetch_csrf": true
+    }
+  }
+}

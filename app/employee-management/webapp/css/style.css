@@ -1,0 +1,64 @@
+/* Employee Management System - Custom CSS */
+
+.myAppDemoWT .myCustomButton.sapMBtn {
+    margin-right: 0.125rem
+}
+
+.myAppDemoWT .myCustomText {
+    display: inline-block;
+    font-weight: bold;
+}
+
+/* Custom styling for tiles */
+.sapUiTinyMargin {
+    margin: 0.5rem;
+}
+
+/* Dashboard specific styling */
+.dashboardTile {
+    cursor: pointer;
+}
+
+.dashboardTile:hover {
+    opacity: 0.8;
+}
+
+/* Employee list styling */
+.employeeListItem {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Department card styling */
+.departmentCard {
+    margin: 1rem 0;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .sapUiMediumMargin {
+        margin: 0.5rem;
+    }
+}
+
+/* Status indicators */
+.statusActive {
+    color: #107e3e;
+}
+
+.statusInactive {
+    color: #b00;
+}
+
+.statusPending {
+    color: #e9730c;
+}
+
+/* Custom form styling */
+.formContainer {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.fieldGroup {
+    margin-bottom: 1rem;
+}

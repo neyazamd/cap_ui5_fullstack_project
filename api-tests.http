@@ -1,0 +1,560 @@
+### Employee Management & HR System API Testing - ENHANCED
+### Base URL: http://localhost:4005/employee
+
+# ========================================
+# 1. SERVICE DISCOVERY & METADATA
+# ========================================
+
+### Get Service Root
+GET http://localhost:4005/employee
+
+### Get Service Metadata (OData Schema)
+GET http://localhost:4005/employee/$metadata
+
+# ========================================
+# 2. NEW ENHANCED ENTITIES TESTING
+# ========================================
+
+### Get All Salary Grades
+GET http://localhost:4005/employee/SalaryGrades
+
+### Get All Status Types  
+GET http://localhost:4005/employee/StatusTypes
+
+### Get All Training Programs
+GET http://localhost:4005/employee/TrainingPrograms
+
+### Get All Benefit Types
+GET http://localhost:4005/employee/BenefitTypes
+
+### Get Leave Balances (with calculated fields)
+GET http://localhost:4005/employee/LeaveBalances
+
+### Get Employee Trainings
+GET http://localhost:4005/employee/EmployeeTrainings
+
+### Get Employee Benefits
+GET http://localhost:4005/employee/EmployeeBenefits
+
+### Get Employee History
+GET http://localhost:4005/employee/EmployeeHistory
+
+# ========================================
+# 3. EMPLOYEES - ENHANCED CRUD OPERATIONS
+# ========================================
+
+### Get All Employees (with calculated fields: fullName, age, yearsOfService)
+GET http://localhost:4005/employee/Employees
+
+### Get Single Employee by ID
+GET http://localhost:4005/employee/Employees(1)
+
+### Get Employees with OData Query Options
+GET http://localhost:4005/employee/Employees?$select=employeeId,firstName,lastName,email,salary,fullName,age,yearsOfService&$top=3
+
+### Filter Employees by Status
+GET http://localhost:4005/employee/Employees?$filter=status eq 'Active'
+
+### Search Employees by Name
+GET http://localhost:4005/employee/Employees?$filter=contains(firstName,'John')
+
+### Get Employees with Expanded Department and Position
+GET http://localhost:4005/employee/Employees?$expand=department,position,salaryGrade&$top=2
+
+### Create Enhanced Employee
+POST http://localhost:4005/employee/Employees
+Content-Type: application/json
+
+{
+  "firstName": "Alice",
+  "lastName": "Johnson",
+  "email": "alice.johnson@company.com",
+  "phone": "+1-555-0199",
+  "hireDate": "2023-08-22",
+  "status": "Active",
+  "dateOfBirth": "1990-05-15",
+  "address": "456 Test Avenue, Test City",
+  "employmentType": "Full-Time",
+  "workLocation": "Remote",
+  "salary": 85000,
+  "nationality_code": "US",
+  "department_ID": "2",
+  "position_ID": "2",
+  "salaryGrade_ID": "2"
+}
+
+### Update Employee (PATCH)
+PATCH http://localhost:4004/employee/Employees(1)
+Content-Type: application/json
+
+{
+  "phone": "+1-555-UPDATED",
+  "address": "123 Updated Street, New City"
+}
+
+### Update Employee (PUT) - Full Replace
+PUT http://localhost:4004/employee/Employees(1)
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@company.com",
+  "phone": "+1-555-0101",
+  "hireDate": "2023-01-15",
+  "status": "Active",
+  "dateOfBirth": "1985-06-15",
+  "address": "123 Main St Anytown"
+}
+
+### Delete Employee (be careful!)
+# DELETE http://localhost:4004/employee/Employees(6)
+
+# ========================================
+# 3. DEPARTMENTS - CRUD OPERATIONS
+# ========================================
+
+### Get All Departments
+GET http://localhost:4004/employee/Departments
+
+### Get Single Department
+GET http://localhost:4004/employee/Departments(1)
+
+### Create New Department
+POST http://localhost:4004/employee/Departments
+Content-Type: application/json
+
+{
+  "departmentCode": "SALES",
+  "name": "Sales Department",
+  "description": "Handles all sales operations and customer relationships"
+}
+
+### Update Department
+PATCH http://localhost:4004/employee/Departments(1)
+Content-Type: application/json
+
+{
+  "description": "Updated: Manages employee relations, policies, and recruitment"
+}
+
+# ========================================
+# 4. POSITIONS - CRUD OPERATIONS
+# ========================================
+
+### Get All Positions
+GET http://localhost:4004/employee/Positions
+
+### Create New Position
+POST http://localhost:4004/employee/Positions
+Content-Type: application/json
+
+{
+  "positionCode": "ARCH",
+  "title": "Software Architect",
+  "description": "Designs and oversees software architecture and technical decisions",
+  "salaryGrade": "T3"
+}
+
+### Update Position
+PATCH http://localhost:4004/employee/Positions(1)
+Content-Type: application/json
+
+{
+  "description": "Updated: Manages team operations, strategy, and deliverables"
+}
+
+# ========================================
+# 5. LEAVE TYPES - CRUD OPERATIONS
+# ========================================
+
+### Get All Leave Types
+GET http://localhost:4004/employee/LeaveTypes
+
+### Create New Leave Type
+POST http://localhost:4004/employee/LeaveTypes
+Content-Type: application/json
+
+{
+  "code": "COMP",
+  "name": "Compensatory Leave",
+  "description": "Time off in lieu of overtime work",
+  "maxDaysPerYear": 12,
+  "carryForward": true
+}
+
+# ========================================
+# 6. LEAVE REQUESTS - CRUD OPERATIONS
+# ========================================
+
+### Get All Leave Requests
+GET http://localhost:4004/employee/LeaveRequests
+
+### Get Leave Requests with Employee Details (Expand)
+GET http://localhost:4004/employee/LeaveRequests?$expand=employee,leaveType
+
+### Filter Leave Requests by Status
+GET http://localhost:4004/employee/LeaveRequests?$filter=status eq 'Pending'
+
+### Create New Leave Request
+POST http://localhost:4004/employee/LeaveRequests
+Content-Type: application/json
+
+{
+  "employee_ID": "1",
+  "leaveType_ID": "1",
+  "startDate": "2023-09-15",
+  "endDate": "2023-09-17",
+  "reason": "Family vacation",
+  "status": "Pending"
+}
+
+### Update Leave Request Status
+PATCH http://localhost:4004/employee/LeaveRequests(1)
+Content-Type: application/json
+
+{
+  "status": "Approved",
+  "comments": "Approved by manager"
+}
+
+# ========================================
+# 7. PERFORMANCE REVIEWS - CRUD OPERATIONS
+# ========================================
+
+### Get All Performance Reviews
+GET http://localhost:4004/employee/PerformanceReviews
+
+### Create New Performance Review
+POST http://localhost:4004/employee/PerformanceReviews
+Content-Type: application/json
+
+{
+  "employee_ID": "1",
+  "reviewer_ID": "2",
+  "reviewPeriodStart": "2023-01-01",
+  "reviewPeriodEnd": "2023-06-30",
+  "overallRating": 4,
+  "goals": "Complete project deliverables, improve technical skills",
+  "achievements": "Successfully delivered 3 major projects on time",
+  "feedback": "Excellent performance, strong technical skills",
+  "status": "Draft"
+}
+
+### Update Performance Review
+PATCH http://localhost:4004/employee/PerformanceReviews(1)
+Content-Type: application/json
+
+{
+  "status": "Submitted",
+  "overallRating": 5,
+  "feedback": "Outstanding performance, exceeded expectations"
+}
+
+# ========================================
+# 8. TIMESHEETS - CRUD OPERATIONS
+# ========================================
+
+### Get All Timesheets
+GET http://localhost:4004/employee/Timesheets
+
+### Filter Timesheets by Employee
+GET http://localhost:4004/employee/Timesheets?$filter=employee_ID eq '1'
+
+### Get Timesheets for Current Month
+GET http://localhost:4004/employee/Timesheets?$filter=workDate ge '2023-08-01' and workDate le '2023-08-31'
+
+### Create New Timesheet Entry
+POST http://localhost:4004/employee/Timesheets
+Content-Type: application/json
+
+{
+  "employee_ID": "1",
+  "workDate": "2023-08-22",
+  "hoursWorked": 8.0,
+  "project": "Employee Management System",
+  "task": "API development and testing",
+  "status": "Draft"
+}
+
+### Submit Timesheet (Update Status)
+PATCH http://localhost:4004/employee/Timesheets(1)
+Content-Type: application/json
+
+{
+  "status": "Submitted"
+}
+
+# ========================================
+# 9. ENHANCED CUSTOM ACTIONS (Business Logic)
+# ========================================
+
+### Approve Leave Request
+POST http://localhost:4005/employee/approveLeaveRequest
+Content-Type: application/json
+
+{
+  "requestId": "1"
+}
+
+### Reject Leave Request
+POST http://localhost:4005/employee/rejectLeaveRequest
+Content-Type: application/json
+
+{
+  "requestId": "1",
+  "reason": "Insufficient leave balance"
+}
+
+### Submit Performance Review
+POST http://localhost:4005/employee/submitPerformanceReview
+Content-Type: application/json
+
+{
+  "reviewId": "1"
+}
+
+### NEW: Promote Employee
+POST http://localhost:4005/employee/promoteEmployee
+Content-Type: application/json
+
+{
+  "employeeId": "1",
+  "newPositionId": "1",
+  "effectiveDate": "2023-09-01",
+  "salaryIncrease": 10000
+}
+
+### NEW: Transfer Employee
+POST http://localhost:4005/employee/transferEmployee
+Content-Type: application/json
+
+{
+  "employeeId": "2",
+  "newDepartmentId": "3",
+  "effectiveDate": "2023-09-01"
+}
+
+### NEW: Calculate Leave Balance
+POST http://localhost:4005/employee/calculateLeaveBalance
+Content-Type: application/json
+
+{
+  "employeeId": "1",
+  "year": 2023
+}
+
+### NEW: Enroll in Training
+POST http://localhost:4005/employee/enrollInTraining
+Content-Type: application/json
+
+{
+  "employeeId": "1",
+  "trainingId": "1"
+}
+
+### NEW: Submit Timesheet
+POST http://localhost:4005/employee/submitTimesheet
+Content-Type: application/json
+
+{
+  "timesheetId": "1"
+}
+
+# ========================================
+# 10. NEW ANALYTICS FUNCTIONS
+# ========================================
+
+### Get Department Metrics
+POST http://localhost:4005/employee/getDepartmentMetrics
+Content-Type: application/json
+
+{
+  "departmentId": "2"
+}
+
+### Get Employee Metrics  
+POST http://localhost:4005/employee/getEmployeeMetrics
+Content-Type: application/json
+
+{
+  "employeeId": "1"
+}
+
+# ========================================
+# 11. ENHANCED LEAVE MANAGEMENT
+# ========================================
+
+### Create Enhanced Leave Request (with business day calculation)
+POST http://localhost:4005/employee/LeaveRequests
+Content-Type: application/json
+
+{
+  "employee_ID": "1",
+  "leaveType_ID": "1", 
+  "startDate": "2023-09-18",
+  "endDate": "2023-09-22",
+  "reason": "Family vacation - enhanced request",
+  "isEmergency": false,
+  "delegatedTo_ID": "2"
+}
+
+### Create Emergency Leave Request
+POST http://localhost:4005/employee/LeaveRequests
+Content-Type: application/json
+
+{
+  "employee_ID": "2",
+  "leaveType_ID": "2",
+  "startDate": "2023-08-23", 
+  "endDate": "2023-08-23",
+  "reason": "Medical emergency",
+  "isEmergency": true
+}
+
+# ========================================
+# 12. ENHANCED TIMESHEET MANAGEMENT
+# ========================================
+
+### Create Enhanced Timesheet (with auto-calculation)
+POST http://localhost:4005/employee/Timesheets
+Content-Type: application/json
+
+{
+  "employee_ID": "1",
+  "workDate": "2023-08-22",
+  "startTime": "09:00",
+  "endTime": "18:00",
+  "breakTime": 1.0,
+  "project": "Employee Management System Enhancement",
+  "task": "API development and business logic implementation",
+  "workLocation": "Remote",
+  "billableHours": 8.0,
+  "comments": "Productive day working on new features"
+}
+
+# ========================================
+# 13. TRAINING AND DEVELOPMENT
+# ========================================
+
+### Enroll Employee in Training
+POST http://localhost:4005/employee/EmployeeTrainings
+Content-Type: application/json
+
+{
+  "employee_ID": "1",
+  "training_ID": "1",
+  "enrolledDate": "2023-08-22",
+  "status": "Enrolled"
+}
+
+### Complete Training with Score
+PATCH http://localhost:4005/employee/EmployeeTrainings(1)
+Content-Type: application/json
+
+{
+  "completedDate": "2023-09-15",
+  "status": "Completed",
+  "score": 95.5,
+  "feedback": "Excellent training program, very comprehensive"
+}
+
+# ========================================
+# 14. BENEFITS MANAGEMENT
+# ========================================
+
+### Enroll Employee in Benefits
+POST http://localhost:4005/employee/EmployeeBenefits
+Content-Type: application/json
+
+{
+  "employee_ID": "1",
+  "benefit_ID": "1",
+  "enrolledDate": "2023-01-01",
+  "status": "Active",
+  "employeeCost": 150.00,
+  "dependents": 2
+}
+
+# ========================================
+# 15. ADVANCED ODATA QUERIES
+# ========================================
+
+### Count Total Employees
+GET http://localhost:4005/employee/Employees/$count
+
+### Get Employees with Pagination
+GET http://localhost:4005/employee/Employees?$skip=2&$top=3
+
+### Order Employees by Hire Date
+GET http://localhost:4005/employee/Employees?$orderby=hireDate desc
+
+### Complex Filter - Active Employees in IT Department
+GET http://localhost:4005/employee/Employees?$filter=status eq 'Active' and department_ID eq '2'
+
+### Filter by Salary Range
+GET http://localhost:4005/employee/Employees?$filter=salary ge 70000 and salary le 100000
+
+### Get High Performers (if performance reviews exist)
+GET http://localhost:4005/employee/PerformanceReviews?$filter=overallRating ge 4
+
+### Get Employees by Employment Type
+GET http://localhost:4005/employee/Employees?$filter=employmentType eq 'Full-Time'
+
+### Search by Multiple Criteria
+GET http://localhost:4005/employee/Employees?$filter=contains(workLocation,'Remote') and salary gt 80000
+
+# ========================================
+# 16. CALCULATED FIELDS TESTING
+# ========================================
+
+### Test Calculated Fields (fullName, age, yearsOfService)
+GET http://localhost:4005/employee/Employees?$select=firstName,lastName,fullName,dateOfBirth,age,hireDate,yearsOfService
+
+### Test Leave Balance Calculation (available = allocated + carriedForward - used)
+GET http://localhost:4005/employee/LeaveBalances?$select=employee_ID,leaveType_ID,allocated,used,carriedForward,available
+
+### Test Department Metrics (employeeCount, averageRating)
+GET http://localhost:4005/employee/Departments?$select=name,employeeCount,averageRating,budget
+
+# ========================================
+# 11. ERROR TESTING
+# ========================================
+
+### Test Invalid Employee Creation (Missing Required Field)
+POST http://localhost:4004/employee/Employees
+Content-Type: application/json
+
+{
+  "firstName": "Invalid",
+  "phone": "+1-555-ERROR"
+  // Missing required fields: lastName, email, hireDate
+}
+
+### Test Invalid ID Access
+GET http://localhost:4004/employee/Employees(999999)
+
+### Test Invalid Filter
+GET http://localhost:4004/employee/Employees?$filter=invalidField eq 'test'
+
+# ========================================
+# 12. BATCH OPERATIONS (Advanced)
+# ========================================
+
+### Batch Request - Multiple Operations
+POST http://localhost:4004/employee/$batch
+Content-Type: multipart/mixed; boundary=batch_123
+
+--batch_123
+Content-Type: application/http
+
+GET Employees HTTP/1.1
+Host: localhost:4004
+
+--batch_123
+Content-Type: application/http
+
+GET Departments HTTP/1.1
+Host: localhost:4004
+
+--batch_123--

@@ -1,0 +1,6 @@
+ID,code,name,description,maxDaysPerYear,carryForward
+1,VAC,Vacation,Annual vacation leave,20,true
+2,SICK,Sick Leave,Medical leave,10,false
+3,PERS,Personal Leave,Personal time off,5,false
+4,MAT,Maternity Leave,Maternity leave,90,false
+5,PAT,Paternity Leave,Paternity leave,15,false

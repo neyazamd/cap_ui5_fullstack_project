@@ -1,0 +1,6 @@
+ID,departmentCode,name,description,manager_ID,costCenter,budget,currency_code,location,establishedDate
+1,HR,Human Resources,Manages employee relations and policies,2,CC-HR-001,500000,USD,New York Office,2020-01-01
+2,IT,Information Technology,Manages technology infrastructure and development,1,CC-IT-001,2000000,USD,New York Office,2020-01-01
+3,FIN,Finance,Manages financial operations and accounting,,CC-FIN-001,800000,USD,Chicago Office,2020-01-01
+4,MKT,Marketing,Manages marketing and customer engagement,,CC-MKT-001,1200000,USD,New York Office,2020-01-01
+5,OPS,Operations,Manages day-to-day business operations,,CC-OPS-001,1500000,USD,Chicago Office,2020-01-01

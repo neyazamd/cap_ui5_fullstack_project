@@ -1,0 +1,13 @@
+<mvc:View controllerName="com.company.employeemanagement.controller.Employees"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    
+    <Page id="employeePage" title="{i18n>employeeListTitle}" showNavButton="true" navButtonPress="onNavBack">
+        <content>
+            <VBox class="sapUiMediumMargin">
+                <Text text="Employee Management - Coming Soon" class="sapUiLargeMarginBottom"/>
+                <Text text="This section will contain employee list and management features."/>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,6 @@
+ID,code,name,description,category,provider,cost,currency_code,isActive
+1,HEALTH,Health Insurance,Comprehensive health insurance coverage,Health,HealthCorp,500,USD,true
+2,DENTAL,Dental Insurance,Dental care coverage,Health,DentalPlus,100,USD,true
+3,RETIRE,Retirement Plan,401(k) retirement savings plan,Retirement,RetirePlan Inc,300,USD,true
+4,LIFE,Life Insurance,Basic life insurance coverage,Insurance,LifeCorp,50,USD,true
+5,VISION,Vision Insurance,Eye care and vision coverage,Health,VisionCare,75,USD,true

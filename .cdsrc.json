@@ -1,0 +1,26 @@
+{
+    "build": {
+        "target": ".",
+        "tasks": [
+            {
+                "for": "hana",
+                "dest": "gen/db"
+            },
+            {
+                "for": "node-cf",
+                "dest": "gen/srv"
+            }
+        ]
+    },
+    "requires": {
+        "db": {
+            "kind": "sqlite",
+            "credentials": {
+                "url": ":memory:"
+            }
+        }
+    },
+    "hana": {
+        "deploy-format": "hdbtable"
+    }
+}

@@ -1,0 +1,13 @@
+<mvc:View controllerName="com.company.employeemanagement.controller.Performance"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    
+    <Page id="performancePage" title="{i18n>performanceListTitle}" showNavButton="true" navButtonPress="onNavBack">
+        <content>
+            <VBox class="sapUiMediumMargin">
+                <Text text="Performance Management - Coming Soon" class="sapUiLargeMarginBottom"/>
+                <Text text="This section will contain performance review management features."/>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

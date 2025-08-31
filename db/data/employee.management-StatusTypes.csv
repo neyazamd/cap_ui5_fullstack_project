@@ -1,0 +1,10 @@
+ID,code,name,description,category,isActive
+1,ACTIVE,Active,Employee is currently active,Employee,true
+2,INACTIVE,Inactive,Employee is inactive,Employee,false
+3,TERMINATED,Terminated,Employee has been terminated,Employee,false
+4,PENDING,Pending,Leave request is pending approval,Leave,true
+5,APPROVED,Approved,Leave request has been approved,Leave,true
+6,REJECTED,Rejected,Leave request has been rejected,Leave,true
+7,DRAFT,Draft,Performance review is in draft status,Review,true
+8,SUBMITTED,Submitted,Performance review has been submitted,Review,true
+9,COMPLETED,Completed,Performance review is completed,Review,true

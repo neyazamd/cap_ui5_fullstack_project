@@ -1,0 +1,6 @@
+ID,employeeId,firstName,lastName,email,phone,department_ID,position_ID,hireDate,status,dateOfBirth,address,employmentType,workLocation,salary,salaryGrade_ID,nationality_code
+1,EMP0001,John,Doe,john.doe@company.com,+1-555-0101,2,1,2023-01-15,Active,1985-06-15,123 Main St Anytown,Full-Time,New York Office,95000,4,US
+2,EMP0002,Jane,Smith,jane.smith@company.com,+1-555-0102,1,2,2023-02-01,Active,1990-03-22,456 Oak Ave Anytown,Full-Time,New York Office,75000,2,US
+3,EMP0003,Mike,Johnson,mike.johnson@company.com,+1-555-0103,2,2,2023-03-10,Active,1988-11-08,789 Pine Rd Anytown,Full-Time,Remote,80000,2,US
+4,EMP0004,Sarah,Wilson,sarah.wilson@company.com,+1-555-0104,3,3,2023-04-05,Active,1992-07-14,321 Elm St Anytown,Full-Time,Chicago Office,85000,2,US
+5,EMP0005,David,Brown,david.brown@company.com,+1-555-0105,4,4,2023-05-20,Active,1987-12-03,654 Maple Dr Anytown,Part-Time,Remote,60000,1,US
