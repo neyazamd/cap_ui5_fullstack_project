@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management - FLP Sandbox</title>
+
+    <script>
+        // Bootstrap the unified shell in sandbox mode for stand-alone usage
+        window["sap-ushell-config"] = {
+            defaultRenderer: "fiori2",
+            applications: {
+                "employeemanagement-display": {
+                    title: "Employee Management",
+                    description: "Employee Management System",
+                    applicationType: "URL",
+                    url: "../",
+                    navigationMode: "embedded"
+                }
+            }
+        };
+    </script>
+
+    <script src="https://ui5.sap.com/test-resources/sap/ushell/bootstrap/sandbox.js"></script>
+    <script id="sap-ui-bootstrap" src="https://ui5.sap.com/resources/sap-ui-core.js" data-sap-ui-theme="sap_horizon"
+        data-sap-ui-async="true" data-sap-ui-preload="async" data-sap-ui-language="en" data-sap-ui-resourceroots="{
+            &quot;com.company.employeemanagement&quot;: &quot;../&quot;
+        }" data-sap-ui-frameoptions="trusted" data-sap-ui-compatversion="edge">
+        </script>
+
+    <script>
+        sap.ui.getCore().attachInit(function () {
+            // Initialize the unified shell
+            sap.ushell.Container.createRenderer("fiori2", true).then(function (oRenderer) {
+                oRenderer.placeAt("content");
+            });
+        });
+    </script>
+</head>
+
+<body class="sapUiBody" id="content"></body>
+
+</html>
